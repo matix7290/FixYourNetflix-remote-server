@@ -1,0 +1,27 @@
+{
+  "id": 1,
+  "started": "2022-12-29T23:19:26.615",
+  "ended": null,
+  "video_limit": 1,
+  "subject_id": "test_lucjan",
+  "settings": "{\"bitrate_change_interval_ms\":150000,\"bitrate_change_jitter_ms\":25000,\"quality_increase_rewind\":3000,\"stats_record_interval_ms\":1000,\"subject_id\":\"test_lucjan\",\"video_url\":[\"https://www.netflix.com/watch/81323602?trackId=14170287&tctx=2%2C1%2Cc84f290c-853c-4601-b4c1-5308bbcea05a-124498762%2CNES_060C4C184F5626321ED26682853EBA-B9F225DDE3A711-8DC11EAD4E_p_1672352319479%2CNES_060C4C184F5626321ED26682853EBA_p_1672352258927%2C%2C%2C%2C\"]}",
+  "urls": "[\"https://www.netflix.com/watch/81323602?trackId=14170287&tctx=2%2C1%2Cc84f290c-853c-4601-b4c1-5308bbcea05a-124498762%2CNES_060C4C184F5626321ED26682853EBA-B9F225DDE3A711-8DC11EAD4E_p_1672352319479%2CNES_060C4C184F5626321ED26682853EBA_p_1672352258927%2C%2C%2C%2C\"]",
+  "video": [
+    {
+      "id": 1,
+      "started": "2022-12-29T23:19:26.636",
+      "ended": null,
+      "experiment_id": 1,
+      "url": "https://www.netflix.com/watch/81323602?trackId=14170287&tctx=2%2C1%2Cc84f290c-853c-4601-b4c1-5308bbcea05a-124498762%2CNES_060C4C184F5626321ED26682853EBA-B9F225DDE3A711-8DC11EAD4E_p_1672352319479%2CNES_060C4C184F5626321ED26682853EBA_p_1672352258927%2C%2C%2C%2C",
+      "playback_data": {}
+    },
+    {
+      "id": 2,
+      "started": "2022-12-30T07:06:38.700",
+      "ended": null,
+      "experiment_id": 1,
+      "url": "https://www.netflix.com/watch/81323602?trackId=14170287&tctx=2%2C1%2Cc84f290c-853c-4601-b4c1-5308bbcea05a-124498762%2CNES_060C4C184F5626321ED26682853EBA-B9F225DDE3A711-8DC11EAD4E_p_1672352319479%2CNES_060C4C184F5626321ED26682853EBA_p_1672352258927%2C%2C%2C%2C",
+      "playback_data": {}
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  },
+  "name": "remote-server-netflix",
+  "version": "1.0.0",
+  "description": "Server to collecting data from subjects",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Olszewski",
+  "license": "ISC"
+}
