@@ -12,6 +12,8 @@ module.exports = function (app, query) {
           req.body.content_continuation ? 1 : 0
         }', '${req.body.settings}', '${req.body.urls}')
             `;
+
+        console.log(req.body);
         await query(data);
       } finally {
       }
