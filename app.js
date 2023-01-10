@@ -4,7 +4,7 @@ const util = require("util");
 const mysql = require("mysql");
 
 const app = express();
-const port = 5001;
+const port = process.env.PORT || 5001;
 
 const conn = mysql.createConnection({
   host: "mysql.agh.edu.pl",
@@ -24,6 +24,10 @@ require("./routes/playback_data")(app, query);
 require("./routes/resoult")(app, query);
 require("./routes/video")(app, query);
 
+app.get("/", (req, res) => {
+  res.send(`App listening on port ${port}`);
+});
+
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`App listening on port ${port}`);
 });
