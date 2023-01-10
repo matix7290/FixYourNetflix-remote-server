@@ -7,13 +7,12 @@ module.exports = function (app, query) {
             VALUES (${req.body.id}, '${req.body.started}', ${
           req.body.video_limit
         }, ${req.body.subject_age}, '${req.body.subject_sex}', '${
-          req.body.subject_netflix_familiarity ? 1 : 0
-        }', '${req.body.subject_selected_content ? 1 : 0}', '${
-          req.body.content_continuation ? 1 : 0
+          req.body.subject_netflix_familiarity === "true" ? 1 : 0
+        }', '${req.body.subject_selected_content === "true" ? 1 : 0}', '${
+          req.body.content_continuation === "true" ? 1 : 0
         }', '${req.body.settings}', '${req.body.urls}')
             `;
 
-        console.log(1, req.body.subject_sex);
         await query(data);
       } finally {
       }
