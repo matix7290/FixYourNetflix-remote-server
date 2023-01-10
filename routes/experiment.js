@@ -4,7 +4,13 @@ module.exports = function (app, query) {
       try {
         var data = `
             INSERT INTO experiment (id, started, video_limit, subject_age, subject_sex, subject_netflix_familiarity, subject_selected_content, content_continuation, settings, urls)
-            VALUES (${req.body.id}, '${req.body.started}', ${req.body.video_limit}, ${req.body.subject_age}, '${req.body.subject_sex}', '${req.body.subject_netflix_familiarity}', '${req.body.subject_selected_content}', '${req.body.content_continuation}', '${req.body.settings}', '${req.body.urls}')
+            VALUES (${req.body.id}, '${req.body.started}', ${
+          req.body.video_limit
+        }, ${req.body.subject_age}, '${req.body.subject_sex}', '${
+          req.body.subject_netflix_familiarity ? 1 : 0
+        }', '${req.body.subject_selected_content ? 1 : 0}', '${
+          req.body.content_continuation ? 1 : 0
+        }', '${req.body.settings}', '${req.body.urls}')
             `;
         await query(data);
       } finally {
