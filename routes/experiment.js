@@ -55,7 +55,7 @@ module.exports = function (app, query) {
     };
 
     result().then((value) => {
-      res.status(200).send({ next_id: value });
+      res.status(200).send({ next_id: 1 });
     });
   });
 
