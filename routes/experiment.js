@@ -42,9 +42,9 @@ module.exports = function (app, query) {
           "select id from experiment order by id desc limit 1"
         );
 
-        console.log(rows[0]);
+        console.log(rows.length);
 
-        if (rows[0] == undefined) {
+        if (rows.length == 0) {
           userCourse = 1;
         } else {
           userCourse = rows[0].id + 1;
