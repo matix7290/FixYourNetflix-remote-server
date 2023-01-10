@@ -16,12 +16,12 @@ const query = util.promisify(conn.query).bind(conn);
 
 app.use(express.json());
 
-// require("./routes/bitrate")(app, query);
-// require("./routes/event")(app, query);
-// require("./routes/experiment")(app, query);
-// require("./routes/playback_data")(app, query);
-// require("./routes/resoult")(app, query);
-// require("./routes/video")(app, query);
+require("./routes/bitrate")(app, query);
+require("./routes/event")(app, query);
+require("./routes/experiment")(app, query);
+require("./routes/playback_data")(app, query);
+require("./routes/resoult")(app, query);
+require("./routes/video")(app, query);
 
 app.get("/", (req, res) => {
   res.send(`App listening on port ${port}`);
