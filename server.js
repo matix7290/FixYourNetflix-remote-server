@@ -8,6 +8,7 @@ const port = process.env.PORT || 5001;
 
 const conn = mysql.createConnection({
   host: "mysql.agh.edu.pl",
+  port: 3306,
   user: "mbolszew",
   password: "L4DPUVJK0mzrKUbv",
   database: "mbolszew",
@@ -29,5 +30,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
+  console.log(`App listening on port ${port}`, conn.state);
 });
