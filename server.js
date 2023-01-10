@@ -7,11 +7,12 @@ const app = express();
 const port = process.env.PORT || 5001;
 
 const conn = mysql.createConnection({
-  host: "mysql.agh.edu.pl",
-  port: 3306,
-  user: "mbolszew",
-  password: "L4DPUVJK0mzrKUbv",
-  database: "mbolszew",
+  host: "mbolszewski.ddns.net",
+  port: 2136,
+  user: "netflix",
+  password: "netflix-db-conn-2137",
+  // password: "zeqMuw-8taffa-wikvef",
+  database: "netflix",
 });
 
 const query = util.promisify(conn.query).bind(conn);
@@ -30,5 +31,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`App listening on port ${port}`, conn.state);
+  console.log(`App listening on port ${port}`);
 });
