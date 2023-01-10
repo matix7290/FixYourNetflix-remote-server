@@ -13,7 +13,7 @@ module.exports = function (app, query) {
         }', '${req.body.settings}', '${req.body.urls}')
             `;
 
-        console.log(req.body);
+        console.log(data);
         await query(data);
       } finally {
       }
