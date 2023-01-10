@@ -1,12 +1,10 @@
 module.exports = function (app, query) {
   app.post("/experiment", async (req, res) => {
-    //Create experiment
-
     let sql = async function () {
       try {
         var data = `
-            INSERT INTO experiment (id, started, video_limit, subject_age, subject_sex, settings, urls)
-            VALUES (${req.body.id}, '${req.body.started}', ${req.body.video_limit}, ${req.body.subject_age}, '${req.body.subject_sex}', '${req.body.settings}', '${req.body.urls}')
+            INSERT INTO experiment (id, started, video_limit, subject_age, subject_sex, subject_netflix_familiarity, subject_selected_content, content_continuation, settings, urls)
+            VALUES (${req.body.id}, '${req.body.started}', ${req.body.video_limit}, ${req.body.subject_age}, '${req.body.subject_sex}', '${req.body.subject_netflix_familiarity}', '${req.body.subject_selected_content}', '${req.body.content_continuation}', '${req.body.settings}', '${req.body.urls}')
             `;
         await query(data);
       } finally {
@@ -36,28 +34,20 @@ module.exports = function (app, query) {
 
   app.get("/experiment/next_id", async (req, res) => {
     let result = async function () {
-      var userCourse = "aaa";
+      var userCourse = [];
 
       try {
         const rows = await query(
-          "select id from experiment order by id desc limit 1"
+          "SELECT IFNULL(MAX((id)+1), 1) as next_id FROM experiment"
         );
 
-        console.log(2, rows);
-
-        if (rows.length == 0) {
-          userCourse = 1;
-        } else {
-          userCourse = rows[0].id + 1;
-        }
+        userCourse = rows[0].next_id;
       } finally {
-        console.log(3, query);
         return userCourse;
       }
     };
 
     result().then((value) => {
-      console.log(1, value);
       res.status(200).send({ next_id: value });
     });
   });
