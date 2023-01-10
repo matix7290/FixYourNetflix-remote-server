@@ -11,7 +11,6 @@ const conn = mysql.createConnection({
   port: 2136,
   user: "netflix",
   password: "netflix-db-conn-2137",
-  // password: "zeqMuw-8taffa-wikvef",
   database: "netflix",
 });
 
