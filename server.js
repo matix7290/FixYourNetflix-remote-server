@@ -5,14 +5,14 @@ const mysql = require("mysql");
 const app = express();
 const port = process.env.PORT || 5001;
 
-// const conn = mysql.createConnection({
-//   host: "mysql.agh.edu.pl",
-//   user: "mbolszew",
-//   password: "L4DPUVJK0mzrKUbv",
-//   database: "mbolszew",
-// });
+const conn = mysql.createConnection({
+  host: "mysql.agh.edu.pl",
+  user: "mbolszew",
+  password: "L4DPUVJK0mzrKUbv",
+  database: "mbolszew",
+});
 
-// const query = util.promisify(conn.query).bind(conn);
+const query = util.promisify(conn.query).bind(conn);
 
 app.use(express.json());
 
