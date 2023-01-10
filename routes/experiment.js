@@ -51,6 +51,7 @@ module.exports = function (app, query) {
           userCourse = rows[0].id + 1;
         }
       } finally {
+        console.log(3, userCourse);
         return userCourse;
       }
     };
