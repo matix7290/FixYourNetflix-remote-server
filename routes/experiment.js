@@ -36,13 +36,14 @@ module.exports = function (app, query) {
 
   app.get("/experiment/next_id", async (req, res) => {
     let result = async function () {
-      var userCourse = [];
+      var userCourse = "aaa";
+
       try {
         const rows = await query(
           "select id from experiment order by id desc limit 1"
         );
 
-        console.log(rows.length);
+        console.log(2, rows);
 
         if (rows.length == 0) {
           userCourse = 1;
