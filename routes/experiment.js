@@ -42,6 +42,8 @@ module.exports = function (app, query) {
           "select id from experiment order by id desc limit 1"
         );
 
+        console.log(rows[0]);
+
         if (rows[0] == undefined) {
           userCourse = 1;
         } else {
