@@ -9,8 +9,18 @@
   "description": "Server to collecting data from subjects",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Matt Olszewski",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matix7290/FixYourNetflix-remote-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/matix7290/FixYourNetflix-remote-server/issues"
+  },
+  "homepage": "https://github.com/matix7290/FixYourNetflix-remote-server#readme"
 }
