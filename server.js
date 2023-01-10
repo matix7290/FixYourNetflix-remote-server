@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
   res.send(`App listening on port ${port}`);
 });
 
-app.use(express.static(path.join(__dirname, "routes")));
+// app.use(express.static(path.join(__dirname, "routes")));
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
