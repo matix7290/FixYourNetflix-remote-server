@@ -26,9 +26,7 @@ module.exports = function (app, query) {
   app.patch("/experiment", async (req, res) => {
     let sql = async function () {
       try {
-        var data = `
-            UPDATE experiment SET ended=${req.body.ended} WHERE id=${req.body.experiment_id}
-            `;
+        var data = `UPDATE experiment SET ended='${req.body.ended}' WHERE id=${req.body.experiment_id}`;
         await query(data);
       } finally {
       }

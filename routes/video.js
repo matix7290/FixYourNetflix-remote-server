@@ -27,7 +27,7 @@ module.exports = function (app, query) {
     let sql = async function () {
       try {
         var data = `
-            UPDATE video SET ended=${req.body.ended} WHERE video.id=${req.body.video_id}
+            UPDATE video SET ended='${req.body.ended}' WHERE video.id=${req.body.video_id}
             `;
         await query(data);
       } finally {
