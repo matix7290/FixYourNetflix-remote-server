@@ -43,7 +43,8 @@ module.exports = function (app, query) {
     };
 
     result().then((value) => {
-      res.send(value);
+      res.setHeader("Content-Type", "application/json");
+      res.end(JSON.stringify(value, null, 3));
     });
   });
 };
