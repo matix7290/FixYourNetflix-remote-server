@@ -7,6 +7,8 @@ module.exports = function (app, query) {
         await query(data);
 
         data = `INSERT INTO archive (video_id, data, timestamp) VALUES (${req.body.video_id}, '${req.body.archive.data}', '${req.body.archive.timestamp}')`;
+
+        await query(data);
       } finally {
       }
     };
