@@ -12,7 +12,7 @@ module.exports = function (app, query) {
         const rows = await query(
           "select id from video order by id desc limit 1"
         );
-        userCourse = rows[0].id + 1;
+        userCourse = rows[0].id;
       } finally {
         return userCourse;
       }

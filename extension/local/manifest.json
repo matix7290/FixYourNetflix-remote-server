@@ -1,0 +1,48 @@
+{
+  "description": "AGH-TUFIQoE-2021-2023 Netflix Experiment || Chrome Extension by Rafal Figlus",
+  "version": "4.3.5",
+  "manifest_version": 3,
+  "name": "FixYourNetflix - local",
+  "background": { "service_worker": "background.bundle.js" },
+  "action": { "default_icon": "fix-netflix-64.png" },
+  "icons": {
+    "32": "fix-netflix-32.png",
+    "64": "fix-netflix-64.png",
+    "128": "fix-netflix-128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content.styles.css",
+        "icon-128.png",
+        "icon-34.png",
+        "fix-netflix-32.png",
+        "fix-netflix-64.png",
+        "fix-netflix-128.png",
+        "logo.png"
+      ],
+      "matches": []
+    },
+    {
+      "resources": ["netflixControls.bundle.js", "cadmiumPlayercore.bundle.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "host_permissions": [
+    "https://www.netflix.com/*",
+    "*://assets.nflxext.com/*/ffe/player/html/*",
+    "*://www.assets.nflxext.com/*/ffe/player/html/*",
+    "http://localhost:5001/*"
+  ],
+  "permissions": [
+    "scripting",
+    "tabs",
+    "activeTab",
+    "storage",
+    "debugger",
+    "webNavigation",
+    "unlimitedStorage",
+    "background",
+    "declarativeNetRequest"
+  ]
+}
