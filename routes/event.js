@@ -3,7 +3,7 @@ module.exports = function (app, query) {
 
         let sql = async function () {
             try {
-                var data = `
+                let data = `
             INSERT INTO event (video_id, type, payload, timestamp) 
             VALUES (${req.body.video_id}, '${req.body.type}', '${req.body.payload}', '${req.body.timestamp}')
             `
@@ -12,7 +12,7 @@ module.exports = function (app, query) {
         }
 
         sql().then(() => {
-            res.status(201).json({ msg: "Birtate change created" })
+            res.status(201).json({ msg: "Bitrate change created" })
         })
     })
 }

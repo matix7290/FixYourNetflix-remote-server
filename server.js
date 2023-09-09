@@ -1,8 +1,7 @@
 const express = require("express");
 const util = require("util");
 const mysql = require("mysql");
-const cors = require("cors");
-var path = require("path");
+const path = require("path");
 
 const app = express();
 const port = process.env.PORT || 5001;
@@ -26,7 +25,7 @@ app.use(function (req, res, next) {
     "GET, POST, PUT, DELETE, PATCH"
   );
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader("Access-Control-Allow-Credentials", 1);
   next();
 });
 
@@ -34,7 +33,7 @@ require(path.join(__dirname + "/routes/bitrate"))(app, query);
 require(path.join(__dirname + "/routes/event"))(app, query);
 require(path.join(__dirname + "/routes/experiment"))(app, query);
 require(path.join(__dirname + "/routes/playback_data"))(app, query);
-require(path.join(__dirname + "/routes/resoult"))(app, query);
+require(path.join(__dirname + "/routes/result"))(app, query);
 require(path.join(__dirname + "/routes/video"))(app, query);
 
 app.get("/", (req, res) => {

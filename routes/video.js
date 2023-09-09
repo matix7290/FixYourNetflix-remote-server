@@ -1,10 +1,10 @@
 module.exports = function (app, query) {
   app.post("/video", function (req, res) {
     let sql = async function () {
-      var userCourse = [];
+      let userCourse = [];
 
       try {
-        var data = `
+        const data = `
             INSERT INTO video (started, experiment_id, url)
             VALUES ('${req.body.started}', ${req.body.experiment_id}, '${req.body.url}')
             `;
@@ -13,8 +13,10 @@ module.exports = function (app, query) {
           "select id from video order by id desc limit 1"
         );
         userCourse = rows[0].id;
-      } finally {
-        return userCourse;
+
+        return userCourse
+      } catch (e) {
+        console.log(e)
       }
     };
 
@@ -26,7 +28,7 @@ module.exports = function (app, query) {
   app.patch("/video", function (req, res) {
     let sql = async function () {
       try {
-        var data = `
+        const data = `
             UPDATE video SET ended='${req.body.ended}' WHERE video.id=${req.body.video_id}
             `;
         await query(data);
